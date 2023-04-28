@@ -6,7 +6,6 @@ plugins {
     id 'jacoco'
     id 'ru.vyarus.java-lib' version '2.4.0'
     id 'net.researchgate.release' version '3.0.2'
-    id 'io.github.gradle-nexus.publish-plugin' version '1.3.0'
     id 'com.github.ben-manes.versions' version '0.46.0'
 }
 
@@ -26,6 +25,7 @@ allprojects {
 }
 
 subprojects {
+    apply plugin:'maven-publish'
     apply plugin: 'groovy'
     apply plugin: 'jacoco'
     apply plugin: 'project-report'
@@ -79,28 +79,27 @@ subprojects {
     }
 
     dependencyUpdates.revision = 'release'
+
+    publishing {
+        publications {
+            "$project.name"(MavenPublication) {
+                groupId project.group
+                artifactId project.name
+                version project.version
+                from components.java
+            }
+        }
+    }
 }
 
 // dependency on all subprojects required for release validation
 check.dependsOn subprojects.check
-
-nexusPublishing {
-    repositories {
-        sonatype {
-            username = findProperty('sonatypeUser')
-            password = findProperty('sonatypePassword')
-        }
-    }
-}
 
 // skip signing for jitpack (snapshots)
 tasks.withType(Sign) {
     return // skip signing
 }
 
-signMavenPublication {
-    return // skip signing
-}
 
 // Required signing properties for release: signing.keyId, signing.password and signing.secretKeyRingFile
 // (https://docs.gradle.org/current/userguide/signing_plugin.html#sec:signatory_credentials)
