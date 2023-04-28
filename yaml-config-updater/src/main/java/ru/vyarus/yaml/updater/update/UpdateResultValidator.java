@@ -18,7 +18,7 @@ import java.util.Set;
  * @since 17.05.2021
  */
 public final class UpdateResultValidator {
-    private static final Logger LOGGER = LoggerFactory.getLogger(UpdateResultValidator.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger("[nookure] yaml-updater");
 
     private UpdateResultValidator() {
     }

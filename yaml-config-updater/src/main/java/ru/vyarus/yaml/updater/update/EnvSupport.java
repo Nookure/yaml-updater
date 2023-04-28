@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
  * @since 08.06.2021
  */
 public class EnvSupport {
-    private final Logger logger = LoggerFactory.getLogger(EnvSupport.class);
+    private final Logger logger = LoggerFactory.getLogger("[nookure] yaml-updater");
 
     private final String prefix;
     private final String postfix;

@@ -33,7 +33,7 @@ import java.util.Map;
  */
 @SuppressWarnings("PMD.InefficientEmptyStringCheck")
 public final class TreeMerger {
-    private static final Logger LOGGER = LoggerFactory.getLogger(TreeMerger.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger("[nookure] yaml-updater");
 
     private TreeMerger() {
     }

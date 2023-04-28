@@ -19,7 +19,6 @@ import ru.vyarus.yaml.updater.update.EnvSupport;
 import ru.vyarus.yaml.updater.update.TreeMerger;
 import ru.vyarus.yaml.updater.update.UpdateResultValidator;
 import ru.vyarus.yaml.updater.util.FileUtils;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,7 +33,7 @@ import java.util.Locale;
 /**
  * Yaml configuration merger preserving comments. Use two yaml parsers: snakeyaml for self-validation and
  * custom one collecting comments (it cares about structure only, not parsing actual values).
- * Bu default, this custom parser could read and write yaml file without changing anything.
+ * By default, this custom parser could read and write yaml file without changing anything.
  * <p>
  * Comments parsing logic: everything above property is a property comment (comments and empty lines between comments).
  * If yaml file has a large header - it would be assumed as first property comment. If there is a footer comment
@@ -77,7 +76,7 @@ import java.util.Locale;
  */
 @SuppressWarnings("PMD.ExcessiveImports")
 public class YamlUpdater {
-    private final Logger logger = LoggerFactory.getLogger(YamlUpdater.class);
+    private final Logger logger = LoggerFactory.getLogger("[nookure] yaml-updater");
 
     private final UpdateConfig config;
     // merge result until final validation (tmp file)

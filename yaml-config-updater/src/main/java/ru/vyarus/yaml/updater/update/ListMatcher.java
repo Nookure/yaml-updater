@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
  * @since 06.06.2021
  */
 public final class ListMatcher {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ListMatcher.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger("[nookure] yaml-updater");
 
     private ListMatcher() {
     }
