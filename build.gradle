@@ -74,6 +74,10 @@ subprojects {
         maxHeapSize = '512m'
     }
 
+    signMavenPublication {
+        return // skip signing
+    }
+
     dependencyUpdates.revision = 'release'
 }
 
@@ -91,6 +95,10 @@ nexusPublishing {
 
 // skip signing for jitpack (snapshots)
 tasks.withType(Sign) {
+    return // skip signing
+}
+
+signMavenPublication {
     return // skip signing
 }
 
