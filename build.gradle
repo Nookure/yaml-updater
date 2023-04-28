@@ -90,7 +90,7 @@ nexusPublishing {
 }
 
 // skip signing for jitpack (snapshots)
-tasks.withType(Sign) {onlyIf { !System.getenv('JITPACK') }}
+tasks.withType(Sign) {onlyIf { false == true }}
 
 // Required signing properties for release: signing.keyId, signing.password and signing.secretKeyRingFile
 // (https://docs.gradle.org/current/userguide/signing_plugin.html#sec:signatory_credentials)
